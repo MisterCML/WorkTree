@@ -10,6 +10,8 @@ import { RouterLink } from 'vue-router'
         <span>大汶科技</span>
       </RouterLink>
       <nav class="home__links" aria-label="主导航">
+        <RouterLink class="home__link" to="/projects">交付案例</RouterLink>
+        <RouterLink class="home__link" to="/vision">愿景与宗旨</RouterLink>
         <RouterLink class="home__link" to="/login">登录</RouterLink>
         <RouterLink class="home__btn" to="/register">注册</RouterLink>
       </nav>
@@ -21,6 +23,7 @@ import { RouterLink } from 'vue-router'
       </p>
       <div class="home__cta">
         <RouterLink class="home__btn home__btn--primary" to="/register">创建账户</RouterLink>
+        <RouterLink class="home__btn" to="/projects">查看交付案例</RouterLink>
         <RouterLink class="home__link home__link--large" to="/login">已有账户？登录</RouterLink>
       </div>
     </section>
