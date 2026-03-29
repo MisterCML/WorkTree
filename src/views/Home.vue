@@ -4,18 +4,6 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <div class="home">
-    <header class="home__nav">
-      <RouterLink to="/" class="home__brand">
-        <span class="home__mark">汶</span>
-        <span>大汶科技</span>
-      </RouterLink>
-      <nav class="home__links" aria-label="主导航">
-        <RouterLink class="home__link" to="/projects">交付案例</RouterLink>
-        <RouterLink class="home__link" to="/vision">愿景与宗旨</RouterLink>
-        <RouterLink class="home__link" to="/login">登录</RouterLink>
-        <RouterLink class="home__btn" to="/register">注册</RouterLink>
-      </nav>
-    </header>
     <section class="home__hero">
       <h1 class="home__title">企业级 IT 软件开发服务</h1>
       <p class="home__lead">
@@ -32,49 +20,10 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 .home {
-  min-height: 100svh;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
-}
-
-.home__nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem clamp(1.25rem, 4vw, 2.5rem);
-  border-bottom: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-}
-
-.home__brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-  color: var(--text-strong);
-  font-weight: 600;
-  font-size: 1.1rem;
-  letter-spacing: 0.04em;
-}
-
-.home__mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #0ea5e9, #0284c7);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.home__links {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  min-height: 0;
 }
 
 .home__link {

@@ -4,18 +4,6 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <div class="vm">
-    <header class="vm__nav">
-      <RouterLink to="/" class="vm__brand">
-        <span class="vm__mark">汶</span>
-        <span>大汶科技</span>
-      </RouterLink>
-      <nav class="vm__links" aria-label="主导航">
-        <RouterLink class="vm__link" to="/vision">愿景与宗旨</RouterLink>
-        <RouterLink class="vm__link" to="/login">登录</RouterLink>
-        <RouterLink class="vm__btn" to="/register">注册</RouterLink>
-      </nav>
-    </header>
-
     <main class="vm__main">
       <p class="vm__eyebrow">关于大汶科技</p>
       <h1 class="vm__title">愿景与宗旨</h1>
@@ -56,51 +44,10 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 .vm {
-  min-height: 100svh;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
-}
-
-.vm__nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem clamp(1.25rem, 4vw, 2.5rem);
-  border-bottom: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-}
-
-.vm__brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-  color: var(--text-strong);
-  font-weight: 600;
-  font-size: 1.1rem;
-  letter-spacing: 0.04em;
-}
-
-.vm__mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #0ea5e9, #0284c7);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.vm__links {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  min-width: 0;
 }
 
 .vm__link {
@@ -117,33 +64,8 @@ import { RouterLink } from 'vue-router'
   background: rgba(14, 165, 233, 0.08);
 }
 
-.vm__link.router-link-active {
-  color: #0284c7;
-  font-weight: 500;
-}
-
 .vm__link--large {
   font-size: 1rem;
-}
-
-.vm__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 1.1rem;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: none;
-  border: 1px solid var(--border);
-  color: var(--text-strong);
-  background: #fff;
-  transition: box-shadow 0.2s, border-color 0.2s;
-}
-
-.vm__btn:hover {
-  border-color: #bae6fd;
-  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.15);
 }
 
 .vm__main {

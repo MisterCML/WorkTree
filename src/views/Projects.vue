@@ -1,6 +1,4 @@
 <script setup>
-import { RouterLink } from 'vue-router'
-
 const projects = [
   {
     name: '区域医疗信息平台',
@@ -55,18 +53,6 @@ const projects = [
 
 <template>
   <div class="projects">
-    <header class="projects__nav">
-      <RouterLink to="/" class="projects__brand">
-        <span class="projects__mark">汶</span>
-        <span>大汶科技</span>
-      </RouterLink>
-      <nav class="projects__links" aria-label="主导航">
-        <RouterLink class="projects__link projects__link--active" to="/projects">交付案例</RouterLink>
-        <RouterLink class="projects__link" to="/login">登录</RouterLink>
-        <RouterLink class="projects__btn" to="/register">注册</RouterLink>
-      </nav>
-    </header>
-
     <main class="projects__main">
       <section class="projects__intro" aria-labelledby="projects-heading">
         <h1 id="projects-heading" class="projects__title">过往交付项目</h1>
@@ -94,88 +80,10 @@ const projects = [
 
 <style scoped>
 .projects {
-  min-height: 100svh;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
-}
-
-.projects__nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem clamp(1.25rem, 4vw, 2.5rem);
-  border-bottom: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-}
-
-.projects__brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-  color: var(--text-strong);
-  font-weight: 600;
-  font-size: 1.1rem;
-  letter-spacing: 0.04em;
-}
-
-.projects__mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #0ea5e9, #0284c7);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.projects__links {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.projects__link {
-  padding: 0.5rem 0.85rem;
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 0.95rem;
-  border-radius: 8px;
-  transition: color 0.2s, background 0.2s;
-}
-
-.projects__link:hover {
-  color: var(--text-strong);
-  background: rgba(14, 165, 233, 0.08);
-}
-
-.projects__link--active {
-  color: var(--text-strong);
-  font-weight: 500;
-}
-
-.projects__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 1.1rem;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: none;
-  border: 1px solid var(--border);
-  color: var(--text-strong);
-  background: #fff;
-  transition: box-shadow 0.2s, border-color 0.2s;
-}
-
-.projects__btn:hover {
-  border-color: #bae6fd;
-  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.15);
+  min-width: 0;
 }
 
 .projects__main {

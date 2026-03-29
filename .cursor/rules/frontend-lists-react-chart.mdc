@@ -1,0 +1,33 @@
+---
+description: 前端列表类 UI 统一用 React Chart（图表）呈现，避免用纯列表/表格替代数据可视化场景
+globs: "**/*.{tsx,jsx}"
+alwaysApply: false
+---
+
+# 列表相关控件：统一使用 React Chart
+
+## 要求
+
+- 凡属于**列表相关**的控件（展示多条同类数据、排行、对比、时间序列列表、仪表盘中的条目区等），**统一使用 React 生态下的图表方案（React Chart）实现**，而不是用 `ul`/`ol`、简易 `map` 列表、或仅 `table` 作为主要呈现方式。
+- **例外**：纯表单选项列表、导航菜单、下拉选项、无障碍必须的语义化列表等，仍可用常规列表组件；**数据浏览、统计、监控类**列表场景优先图表。
+
+## 实现要点
+
+- 优先使用项目已选定的图表库或已封装的 **React Chart** 组件（例如团队约定的 `ReactChart` 封装，或 Recharts、react-chartjs-2、Visx 等与 React 集成的方案）；**新增列表型数据视图时与现有选型保持一致**。
+- 需要表格密度展示时，可**在图表旁或 Tab 内**补充表格，但主视图仍应以 Chart 为主，避免“只有表格没有图”作为默认方案。
+
+## 反例与正例
+
+```tsx
+// ❌ BAD：用简单列表展示本适合图表的多序列/对比数据
+items.map((row) => <div key={row.id}>{row.label}: {row.value}</div>)
+
+// ✅ GOOD：用 React Chart（如 Recharts BarChart/LineChart 或项目内 Chart 封装）展示
+<ResponsiveContainer>
+  <BarChart data={items}>...</BarChart>
+</ResponsiveContainer>
+```
+
+## 非 React 前端
+
+- 本规则通过 `globs` 仅在 `*.tsx` / `*.jsx` 生效。若仓库为 Vue 等其他栈，需在对应技术栈下单独约定等价的“图表优先”规则，或扩展 globs。

@@ -1,4 +1,6 @@
 <script setup>
+import { RouterLink } from 'vue-router'
+
 defineProps({
   title: { type: String, default: '' },
   subtitle: { type: String, default: '' },
@@ -31,7 +33,8 @@ defineProps({
 
 <style scoped>
 .auth-shell {
-  min-height: 100svh;
+  flex: 1;
+  min-height: 0;
   display: grid;
   grid-template-columns: minmax(280px, 1fr) minmax(320px, 480px);
   background: var(--surface);
